@@ -212,8 +212,8 @@ export default function Page() {
         </div>
       </section>
 
-      {/* ROOMS & ACCOMMODATION BENTO */}
-      <section id="platform" className="py-24 sm:py-32 px-4 sm:px-6 md:px-12 lg:px-20 max-w-full overflow-x-clip">
+      {/* ROOMS & ACCOMMODATION BENTO  yep*/}
+      <section id="rooms-section" className="py-24 sm:py-32 px-4 sm:px-6 md:px-12 lg:px-20 max-w-full overflow-x-clip">
         <div className="max-w-6xl mx-auto">
           <div className="mb-16">
             <PixelIcon type="platform" size={40} />
@@ -342,7 +342,7 @@ export default function Page() {
       </section>
 
       {/* FACILITIES & STEPS */}
-      <section id="workflow" className="py-24 sm:py-32 px-4 sm:px-6 md:px-12 lg:px-20 max-w-full overflow-x-clip">
+      <section id="facilities-section" className="py-24 sm:py-32 px-4 sm:px-6 md:px-12 lg:px-20 max-w-full overflow-x-clip">
         <div className="max-w-6xl mx-auto">
           <div className="mb-16">
             <PixelIcon type="workflow" size={40} />

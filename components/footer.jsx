@@ -48,11 +48,16 @@ export function Footer() {
             <ul className="space-y-3 text-sm text-muted-foreground">
               <li className="flex items-start gap-2">
                 <MapPin className="h-4 w-4 mt-0.5 text-primary shrink-0" />
-                <span>
+                <a
+                  href="https://maps.google.com/?q=40+Rattigan+Road+Ganj+Baksh+Town+Lahore"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-primary transition-colors"
+                >
                   {site.location.line1}
                   <br />
                   {site.location.line2}
-                </span>
+                </a>
               </li>
               <li className="flex items-center gap-2">
                 <Phone className="h-4 w-4 text-primary shrink-0" />

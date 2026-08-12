@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react"
 
-const LETTERS = ["S", "E", "C", "O", "N", "D", " ", "H", "O", "M", "E"]
+const LETTERS = ["T", "H", "E", " ", "S", "E", "C", "O", "N", "D", " ", "H", "O", "M", "E"]
 
 const LETTER_IN_STAGGER = 70
 const LETTER_IN_DUR = 600

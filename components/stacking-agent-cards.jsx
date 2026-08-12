@@ -7,7 +7,6 @@ const CARDS = [
   {
     label: "ROOM TYPE 1",
     title: "Three Seater Room",
-    price: "Rs. 7,500 / Month",
     desc: "A spacious shared room designed for focus and comfort, ideal for students who want good company without giving up their personal space.",
     stats: [
       { v: "3 Beds", l: "Occupancy" },
@@ -19,7 +18,6 @@ const CARDS = [
   {
     label: "ROOM TYPE 2",
     title: "Two Seater Room",
-    price: "Rs. 6,000 / Month",
     desc: "A quieter, more private setup for those who prefer a peaceful room with just one roommate — without stretching the budget.",
     stats: [
       { v: "2 Beds", l: "Occupancy" },
@@ -31,7 +29,6 @@ const CARDS = [
   {
     label: "IMPORTANT NOTICE",
     title: "Compulsory Security Fee",
-    price: "Rs. 5,000 One-Time",
     desc: "A compulsory one-time security deposit collected upon check-in. Fully refundable upon check-out as per hostel terms.",
     stats: [
       { v: "One-Time", l: "Refundable Fee" },
@@ -41,9 +38,8 @@ const CARDS = [
   },
   {
     label: "PRIME LOCATION",
-    title: "Near UVAS & Gunj Bakhsh",
-    price: "Walking Distance",
-    desc: "Located in Gunj Bakhsh right next to UVAS campus, markets, transportation, and dining spots.",
+    title: "Near UVAS, GCU & UOE",
+    desc: "Located in Gunj Bakhsh — within easy reach of UVAS, GCU, and UOE campuses, markets, transportation, and dining spots.",
     stats: [
       { v: "24/7", l: "Safe Premises" },
       { v: "WiFi", l: "High-Speed Internet" },
@@ -155,9 +151,6 @@ export function StackingAgentCards() {
                   <div className="md:max-w-[60%]">
                     <div className="flex flex-wrap items-center justify-between gap-2 mb-6">
                       <Tag>{card.label}</Tag>
-                      <span className="text-xs sm:text-sm font-semibold text-emerald-700 bg-emerald-50 px-3 py-1 rounded-full">
-                        {card.price}
-                      </span>
                     </div>
                     <h3 className="text-xl sm:text-2xl font-light mb-3 text-[#111]">{card.title}</h3>
                     <p className="text-sm text-black/45 leading-relaxed mb-8">{card.desc}</p>

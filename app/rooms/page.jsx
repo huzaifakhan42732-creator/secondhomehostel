@@ -6,9 +6,9 @@ import { AmbientBackground } from "@/components/ambient-background"
 import { site, rooms, securityFee } from "@/lib/site-config"
 
 export const metadata = {
-  title: "Rooms & Pricing",
+  title: "Rooms & Accommodation",
   description:
-    "Explore furnished two-seater and three-seater rooms at The Second Home Hostel, near UVAS. Transparent monthly pricing and a compulsory security fee.",
+    "Explore furnished two-seater and three-seater rooms at The Second Home Hostel — ideally located near UVAS, GCU, and UOE. A safe, comfortable, and student-friendly hostel in Gunj Bakhsh.",
 }
 
 export default function RoomsPage() {
@@ -19,7 +19,7 @@ export default function RoomsPage() {
         <div className="mx-auto max-w-4xl px-4 text-center">
           <Reveal>
             <span className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">
-              Rooms &amp; Pricing
+              Rooms &amp; Accommodation
             </span>
           </Reveal>
           <Reveal delay={0.1}>
@@ -54,13 +54,6 @@ export default function RoomsPage() {
                   </div>
 
                   <h2 className="font-display text-3xl font-semibold mt-6">{room.name}</h2>
-
-                  <div className="mt-3 flex items-baseline gap-1">
-                    <span className="font-display text-5xl font-semibold text-gradient-gold">
-                      Rs. {room.price}
-                    </span>
-                    <span className="text-muted-foreground">/ {room.period}</span>
-                  </div>
 
                   <p className="mt-5 text-sm text-muted-foreground leading-relaxed">
                     {room.description}
@@ -98,7 +91,7 @@ export default function RoomsPage() {
               </div>
               <div>
                 <h3 className="text-lg font-semibold text-foreground">
-                  Security Fee: Rs. {securityFee.amount}
+                  Compulsory Security Fee
                 </h3>
                 <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                   {securityFee.note} This applies to all residents regardless

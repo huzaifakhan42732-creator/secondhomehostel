@@ -133,7 +133,7 @@ export default function Page() {
         <div className="absolute inset-x-0 bottom-0 z-30 flex flex-col px-6 md:px-12 pb-12" style={{ maxWidth: "min(56rem, 90vw)" }}>
           <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-black/10 bg-white/70 backdrop-blur-md px-3.5 py-1 text-xs font-medium text-black/70 w-fit">
             <Sparkles className="h-3.5 w-3.5 text-amber-600" />
-            Now Accepting New Residents Near UVAS
+            Now Accepting New Residents Near UVAS, GCU & UOE
           </div>
 
           <h1
@@ -173,42 +173,34 @@ export default function Page() {
               href="/rooms"
               className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl border border-black/15 bg-white/80 backdrop-blur-sm text-black/80 font-medium text-sm hover:bg-white hover:border-black/30 transition-all"
             >
-              View Rooms &amp; Pricing
+              View Rooms
               <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
 
-          {/* Metrics */}
-          <div className="flex flex-wrap gap-6 sm:gap-12 pt-6 border-t border-black/10">
+          {/* University Location Chips */}
+          <div className="flex flex-wrap gap-3 pt-6 border-t border-black/10">
             {[
-              { value: "Rs. 7,500", label: "Three Seater / Mo" },
-              { value: "Rs. 6,000", label: "Two Seater / Mo" },
-              { value: "Rs. 5,000", label: "Compulsory Deposit" },
-            ].map((stat, i) => (
+              { label: "Near UVAS" },
+              { label: "Near GCU" },
+              { label: "Near UOE" },
+            ].map((u, i) => (
               <div
-                key={i}
+                key={u.label}
                 style={{
                   opacity: heroReady ? 1 : 0,
                   filter: heroReady ? "blur(0px)" : "blur(16px)",
                   transform: heroReady ? "translateY(0px)" : "translateY(20px)",
                   transition: `opacity 0.8s cubic-bezier(0.16,1,0.3,1) ${120 + i * 80}ms, filter 0.8s cubic-bezier(0.16,1,0.3,1) ${120 + i * 80}ms, transform 0.8s cubic-bezier(0.16,1,0.3,1) ${120 + i * 80}ms`,
                 }}
+                className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full border border-black/10 bg-white/70 backdrop-blur-sm text-xs font-medium text-black/70"
               >
-                <div
-                  className="text-2xl sm:text-3xl text-[#111] font-light tracking-tight"
-                  style={{ fontFamily: '"IBM Plex Sans", sans-serif' }}
-                >
-                  {stat.value}
-                </div>
-                <div
-                  className="text-xs text-black/40 tracking-widest uppercase mt-1"
-                  style={{ fontFamily: '"IBM Plex Sans", sans-serif' }}
-                >
-                  {stat.label}
-                </div>
+                <MapPin className="h-3 w-3 text-amber-600" />
+                {u.label}
               </div>
             ))}
           </div>
+
         </div>
       </section>
 
@@ -231,9 +223,6 @@ export default function Page() {
               <div>
                 <div className="flex flex-wrap items-center justify-between gap-2 mb-6">
                   <Tag>THREE SEATER ROOM</Tag>
-                  <span className="text-xl sm:text-2xl font-light text-emerald-700 font-mono">
-                    Rs. 7,500 <span className="text-xs text-black/40">/ Month</span>
-                  </span>
                 </div>
                 <h3 className="text-2xl font-light mb-3">Three Seater Room</h3>
                 <p className="text-sm text-black/55 leading-relaxed mb-6">
@@ -265,9 +254,6 @@ export default function Page() {
               <div>
                 <div className="flex flex-wrap items-center justify-between gap-2 mb-6">
                   <Tag>TWO SEATER ROOM</Tag>
-                  <span className="text-xl sm:text-2xl font-light text-emerald-700 font-mono">
-                    Rs. 6,000 <span className="text-xs text-black/40">/ Month</span>
-                  </span>
                 </div>
                 <h3 className="text-2xl font-light mb-3">Two Seater Room</h3>
                 <p className="text-sm text-black/55 leading-relaxed mb-6">
@@ -304,7 +290,7 @@ export default function Page() {
                     </span>
                   </div>
                   <h4 className="text-lg sm:text-xl font-light text-emerald-950">
-                    Compulsory Security Fee: <span className="font-semibold">Rs. 5,000</span>
+                    Compulsory Security Fee
                   </h4>
                   <p className="text-xs text-emerald-800/70 mt-1">
                     Security Fee is compulsory for all residents upon check-in and is fully refundable upon check-out.

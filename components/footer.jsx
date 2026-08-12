@@ -80,7 +80,7 @@ export function Footer() {
             © {new Date().getFullYear()} {site.name}. All rights reserved.
           </p>
           <p className="text-xs text-muted-foreground">
-            Built with care for students &amp; professionals near UVAS.
+            Built with care for students near UVAS, GCU &amp; UOE.
           </p>
         </div>
       </div>

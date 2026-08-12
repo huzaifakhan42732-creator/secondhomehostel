@@ -27,7 +27,7 @@ import { site } from "@/lib/site-config"
 export const metadata = {
   title: "About Us",
   description:
-    "Learn about The Second Home Hostel — a safe, affordable, and comfortable hostel for students and professionals near UVAS, Gunj Bakhsh.",
+    "Learn about The Second Home Hostel — a safe, affordable, and comfortable hostel for students and professionals near UVAS, GCU & UOE, Ganj Baksh Town."
 }
 
 const pillars = [
@@ -40,7 +40,7 @@ const pillars = [
   {
     icon: GraduationCap,
     title: "Built for Students",
-    text: "Quiet, study-friendly rooms and a routine that respects the demands of university life near UVAS.",
+    text: "Quiet, study-friendly rooms and a routine that respects the demands of university life near UVAS, GCU & UOE.",
     color: "#f59e0b",
   },
   {
@@ -64,16 +64,16 @@ const pillars = [
   {
     icon: MapPin,
     title: "Prime Location",
-    text: "Situated in Gunj Bakhsh, right next to UVAS — minutes from campus, markets, and transport.",
+    text: "Situated in Ganj Baksh Town, right next to UVAS, GCU & UOE — minutes from campus, markets, and transport.",
     color: "#f59e0b",
   },
 ]
 
 const stats = [
   { value: "2+", label: "Room Types" },
-  { value: "Rs.6k", label: "Starting Price" },
+  { value: "3", label: "Nearby Campuses" },
   { value: "24/7", label: "Support" },
-  { value: "UVAS", label: "Nearest Campus" },
+  { value: "UVAS·GCU·UOE", label: "Near Campus" },
 ]
 
 export default function AboutPage() {
@@ -123,9 +123,10 @@ export default function AboutPage() {
             <p className="mt-6 text-lg text-black/55 leading-relaxed max-w-2xl mx-auto">
               {site.name} was built around a simple idea: moving away from
               home shouldn't mean giving up comfort, safety, or community. We
-              provide clean, well-furnished rooms in Gunj Bakhsh, right next
-              to UVAS, for students and working professionals who want a
-              dependable place to live without stretching their budget.
+              provide clean, well-furnished rooms in Ganj Baksh Town,
+              conveniently located near UVAS, GCU, and UOE — for students
+              and working professionals who want a dependable place to live
+              without stretching their budget.
             </p>
           </Reveal>
 

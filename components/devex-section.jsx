@@ -12,11 +12,11 @@ const STEPS = [
     lang: "javascript",
     code: [
       { type: "comment", text: "// Available Room Types at The Second Home Hostel" },
-      { type: "keyword", text: "const", after: " threeSeater ", keyword2: "=", keyword3: " { ", fn: "Price", args: "'Rs. 7,500 / Month'" },
-      { type: "keyword", text: "const", after: " twoSeater ", keyword2: "=", keyword3: " { ", fn: "Price", args: "'Rs. 6,000 / Month'" },
+      { type: "keyword", text: "const", after: " threeSeater ", keyword2: "=", keyword3: " { ", fn: "CommonWashroom", args: "true" },
+      { type: "keyword", text: "const", after: " twoSeater ", keyword2: "=", keyword3: " { ", fn: "AttachedWashroom", args: "true" },
       { type: "gap" },
       { type: "output", text: "✓ Both room types fully furnished" },
-      { type: "output", text: "✓ Attached washrooms in every room" },
+      { type: "output", text: "✓ Common washroom (3 seater) / Attached (2 seater)" },
       { type: "output", text: "✓ Study friendly & ventilated" },
     ],
   },
@@ -28,7 +28,7 @@ const STEPS = [
     lang: "javascript",
     code: [
       { type: "comment", text: "// Security Deposit Policy" },
-      { type: "keyword", text: "const", after: " deposit ", keyword2: "=", keyword3: " 'Rs. 5,000' ", fn: "Mandatory", args: "true" },
+      { type: "keyword", text: "const", after: " deposit ", keyword2: "=", keyword3: " { ", fn: "Mandatory", args: "true" },
       { type: "gap" },
       { type: "output", text: "✓ One-time refundable security deposit" },
       { type: "output", text: "✓ Compulsory for all new residents" },
@@ -45,7 +45,7 @@ const STEPS = [
       { type: "success", text: "✓ High-Speed WiFi" },
       { type: "success", text: "✓ 24/7 Electricity & Water" },
       { type: "success", text: "✓ Cleaning & Housekeeping" },
-      { type: "success", text: "✓ Prime Location Near UVAS" },
+      { type: "success", text: "✓ Prime Location Near UVAS, GCU & UOE" },
     ],
   },
   {

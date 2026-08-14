@@ -4,7 +4,7 @@ import { useEffect, useState } from "react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { motion, AnimatePresence } from "framer-motion"
-import { Menu, X, MessageCircle, Home } from "lucide-react"
+import { Menu, X, MessageCircle, Home, Phone } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { navLinks, site } from "@/lib/site-config"
 import { Button } from "@/components/ui/button"
@@ -43,8 +43,8 @@ export function Navbar() {
             <span className="flex h-9 w-9 items-center justify-center rounded-full bg-primary/15 text-primary transition-transform duration-300 group-hover:scale-110">
               <Home className="h-4 w-4" />
             </span>
-            <span className="font-display text-base font-semibold tracking-tight">
-              {site.shortName}
+            <span className="font-display text-sm sm:text-base font-semibold tracking-tight">
+              {site.name}
             </span>
           </Link>
 
@@ -75,7 +75,16 @@ export function Navbar() {
             })}
           </nav>
 
-          <div className="hidden md:block">
+          <div className="hidden md:flex items-center gap-2">
+            <Button
+              as="a"
+              href={`tel:${site.phoneRaw}`}
+              variant="outline"
+              size="sm"
+            >
+              <Phone className="h-4 w-4" />
+              {site.phoneDisplay}
+            </Button>
             <Button
               as="a"
               href={site.whatsappLinkWithMessage}
@@ -123,17 +132,28 @@ export function Navbar() {
                   {link.label}
                 </Link>
               ))}
-              <Button
-                as="a"
-                href={site.whatsappLinkWithMessage}
-                target="_blank"
-                rel="noopener noreferrer"
-                variant="whatsapp"
-                className="mt-2 w-full"
-              >
-                <MessageCircle className="h-4 w-4" />
-                Book on WhatsApp
-              </Button>
+              <div className="grid grid-cols-2 gap-2 mt-2">
+                <Button
+                  as="a"
+                  href={`tel:${site.phoneRaw}`}
+                  variant="outline"
+                  className="w-full"
+                >
+                  <Phone className="h-4 w-4" />
+                  Call
+                </Button>
+                <Button
+                  as="a"
+                  href={site.whatsappLinkWithMessage}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  variant="whatsapp"
+                  className="w-full"
+                >
+                  <MessageCircle className="h-4 w-4" />
+                  WhatsApp
+                </Button>
+              </div>
             </div>
           </motion.div>
         )}

@@ -5,11 +5,11 @@ import { useEffect, useState, useRef } from "react"
 const INQUIRY_TYPES = [
   "Inquiry: Three Seater Room Price",
   "Checking: Two Seater Availability",
-  "Verification: Security Deposit Rs. 5,000",
+  "Verification: Refundable Security Deposit",
   "Location: UVAS Campus Walking Time",
-  "Amenity Check: High-Speed WiFi Speed",
-  "Confirming: Attached Washroom Facilities",
-  "Student Inquiry: Study Environment Quiet Hours",
+  "Amenity Check: High-Speed Wi-Fi",
+  "Confirming: Attached Bathroom (Two Seater)",
+  "Student Inquiry: Quiet Study Environment",
   "WhatsApp Direct: Room Visit Schedule",
   "Resident Request: Laundry & Housekeeping",
   "Availability: Upcoming Month Vacancy",
@@ -20,7 +20,7 @@ const RESIDENT_TYPES = [
   "Hostel Management", "Resident Room 2"
 ]
 
-const REGIONS = ["Gunj Bakhsh", "Near UVAS", "Floor 1", "Floor 2", "Main Desk"]
+const REGIONS = ["Gunj Baksh Town", "Near UVAS", "Near GCU", "Near UOE", "Main Desk"]
 const STATUSES = [
   { label: "available", color: "#16a34a" },
   { label: "available", color: "#16a34a" },

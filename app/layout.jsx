@@ -5,30 +5,30 @@ import "./globals.css"
 
 export const metadata = {
   metadataBase: new URL("https://thesecondhomehostel.com"),
-  title: "The Second Home Hostel | Student Hostel Near UVAS",
+  title: "The Second Home Boys Hostel | Student Hostel Near UVAS Lahore",
   description:
-    "A safe, comfortable, and affordable hostel in Gunj Bakhsh, near UVAS. Furnished two-seater and three-seater rooms, attached washrooms, and a student-friendly environment. Book directly on WhatsApp.",
+    "A safe, comfortable, and affordable boys hostel in Gunj Baksh Town, Lahore near UVAS. Furnished two-seater and three-seater rooms, high-speed Wi-Fi, and a student-friendly environment. Book directly on WhatsApp or Call +923032518181.",
   keywords: [
-    "The Second Home Hostel",
-    "hostel near UVAS",
-    "Gunj Bakhsh hostel",
+    "The Second Home Boys Hostel",
+    "hostel near UVAS Lahore",
+    "Gunj Baksh Town Lahore hostel",
     "student hostel Lahore",
-    "affordable hostel Lahore",
+    "affordable boys hostel Lahore",
   ],
-  authors: [{ name: "The Second Home Hostel" }],
+  authors: [{ name: "The Second Home Boys Hostel" }],
   openGraph: {
-    title: "The Second Home Hostel | Premium Student Hostel Near UVAS",
+    title: "The Second Home Boys Hostel | Premium Student Hostel Near UVAS Lahore",
     description:
-      "Safe, comfortable, and affordable rooms in Gunj Bakhsh, near UVAS. Book your room directly on WhatsApp.",
+      "Safe, comfortable, and affordable rooms in Gunj Baksh Town, Lahore near UVAS. Book your room directly on WhatsApp or call +923032518181.",
     type: "website",
     url: "https://thesecondhomehostel.com",
-    siteName: "The Second Home Hostel",
+    siteName: "The Second Home Boys Hostel",
   },
   twitter: {
     card: "summary_large_image",
-    title: "The Second Home Hostel | Student Hostel Near UVAS",
+    title: "The Second Home Boys Hostel | Student Hostel Near UVAS Lahore",
     description:
-      "Safe, comfortable, and affordable rooms in Gunj Bakhsh, near UVAS. Book your room directly on WhatsApp.",
+      "Safe, comfortable, and affordable rooms in Gunj Baksh Town, Lahore near UVAS. Book your room directly on WhatsApp or call +923032518181.",
   },
   icons: {
     icon: [

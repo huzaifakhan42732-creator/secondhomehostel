@@ -3,12 +3,13 @@
 import { useState, useEffect } from "react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
+import { Phone, MessageCircle } from "lucide-react"
 import { site, navLinks } from "@/lib/site-config"
 
 const NAV_STYLE = {
   backdropFilter: "blur(16px)",
   WebkitBackdropFilter: "blur(16px)",
-  background: "rgba(245,244,240,0.88)",
+  background: "rgba(245,244,240,0.92)",
   boxShadow: "0 8px 32px rgba(0,0,0,0.08), 0 2px 8px rgba(0,0,0,0.06)",
 }
 
@@ -77,33 +78,35 @@ export function MobileNav() {
   const close = () => setOpen(false)
 
   return (
-    <div className="fixed top-4 inset-x-0 z-50 flex justify-center px-4 pointer-events-none">
-      <div className="pointer-events-auto w-full max-w-4xl">
+    <div className="fixed top-4 inset-x-0 z-50 flex justify-center px-3 sm:px-4 pointer-events-none">
+      <div className="pointer-events-auto w-full max-w-5xl">
         {/* Main Bar */}
         <nav
-          className="flex items-center justify-between px-5 py-3 rounded-2xl border border-black/[0.08]"
+          className="flex items-center justify-between px-4 sm:px-5 py-2.5 sm:py-3 rounded-2xl border border-black/[0.08]"
           style={NAV_STYLE}
         >
           {/* Logo */}
           {isHome ? (
             <a
               href="/"
-              className="font-pixel text-xs tracking-[0.2em] text-black/90 font-bold uppercase shrink-0"
+              className="text-xs sm:text-sm tracking-wide text-black font-bold uppercase shrink-0 flex items-center gap-1.5"
               onClick={(e) => {
                 e.preventDefault()
                 close()
                 window.scrollTo({ top: 0, behavior: "smooth" })
               }}
             >
-              {site.shortName}
+              <span className="w-2 h-2 rounded-full bg-amber-500 animate-pulse inline-block" />
+              <span className="truncate max-w-[200px] sm:max-w-none">{site.name}</span>
             </a>
           ) : (
             <Link
               href="/"
               onClick={close}
-              className="font-pixel text-xs tracking-[0.2em] text-black/90 font-bold uppercase shrink-0"
+              className="text-xs sm:text-sm tracking-wide text-black font-bold uppercase shrink-0 flex items-center gap-1.5"
             >
-              {site.shortName}
+              <span className="w-2 h-2 rounded-full bg-amber-500 animate-pulse inline-block" />
+              <span className="truncate max-w-[200px] sm:max-w-none">{site.name}</span>
             </Link>
           )}
 
@@ -122,19 +125,37 @@ export function MobileNav() {
             ))}
           </div>
 
-          {/* Desktop WhatsApp Book CTA */}
-          <a
-            href={site.whatsappLinkWithMessage}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hidden md:inline-flex text-[11px] font-semibold px-4 py-2 rounded-xl border border-emerald-600/30 text-emerald-700 bg-emerald-50/80 hover:bg-emerald-100 hover:text-emerald-800 transition-all duration-200 tracking-wide shrink-0"
-            style={{ fontFamily: "system-ui, -apple-system, sans-serif" }}
-          >
-            BOOK ON WHATSAPP
-          </a>
+          {/* Desktop Actions (Call + WhatsApp) */}
+          <div className="hidden md:flex items-center gap-2.5">
+            <a
+              href={`tel:${site.phoneRaw}`}
+              className="text-[11px] font-semibold px-3.5 py-2 rounded-xl border border-black/10 text-black/80 bg-white/80 hover:bg-white hover:border-black/25 transition-all duration-200 tracking-wide flex items-center gap-1.5 shrink-0"
+              style={{ fontFamily: "system-ui, -apple-system, sans-serif" }}
+            >
+              <Phone className="w-3.5 h-3.5 text-amber-600" />
+              {site.phoneDisplay}
+            </a>
+            <a
+              href={site.whatsappLinkWithMessage}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[11px] font-semibold px-4 py-2 rounded-xl border border-emerald-600/30 text-emerald-700 bg-emerald-50/90 hover:bg-emerald-100 hover:text-emerald-800 transition-all duration-200 tracking-wide flex items-center gap-1.5 shrink-0"
+              style={{ fontFamily: "system-ui, -apple-system, sans-serif" }}
+            >
+              <MessageCircle className="w-3.5 h-3.5" />
+              BOOK ON WHATSAPP
+            </a>
+          </div>
 
           {/* Mobile Hamburger Button */}
           <div className="md:hidden flex items-center gap-2">
+            <a
+              href={`tel:${site.phoneRaw}`}
+              className="p-2 rounded-xl bg-black/[0.04] text-black hover:bg-black/[0.08] transition-colors"
+              aria-label="Call hostel"
+            >
+              <Phone className="w-4 h-4 text-amber-600" />
+            </a>
             <button
               onClick={() => setOpen((v) => !v)}
               className="flex flex-col justify-center items-center w-9 h-9 gap-[5px] rounded-xl hover:bg-black/[0.04] transition-colors"
@@ -170,7 +191,7 @@ export function MobileNav() {
         <div
           className="md:hidden mt-2 overflow-hidden transition-all duration-300 ease-in-out"
           style={{
-            maxHeight: open ? "360px" : "0px",
+            maxHeight: open ? "420px" : "0px",
             opacity: open ? 1 : 0,
             pointerEvents: open ? "auto" : "none",
           }}
@@ -188,15 +209,26 @@ export function MobileNav() {
                 className="px-4 py-2.5 text-sm font-medium text-black/75 hover:text-black hover:bg-black/[0.04] rounded-xl transition-colors tracking-wide"
               />
             ))}
-            <a
-              href={site.whatsappLinkWithMessage}
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={close}
-              className="mt-2 px-4 py-3 text-sm font-semibold text-emerald-700 bg-emerald-50 rounded-xl transition-colors tracking-wide text-center border border-emerald-600/20"
-            >
-              BOOK ON WHATSAPP
-            </a>
+            <div className="grid grid-cols-2 gap-2 mt-2 pt-2 border-t border-black/[0.06]">
+              <a
+                href={`tel:${site.phoneRaw}`}
+                onClick={close}
+                className="px-3 py-2.5 text-xs font-semibold text-black bg-white border border-black/10 rounded-xl transition-colors tracking-wide text-center flex items-center justify-center gap-1.5"
+              >
+                <Phone className="w-3.5 h-3.5 text-amber-600" />
+                Call {site.phoneDisplay}
+              </a>
+              <a
+                href={site.whatsappLinkWithMessage}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={close}
+                className="px-3 py-2.5 text-xs font-semibold text-emerald-700 bg-emerald-50 rounded-xl transition-colors tracking-wide text-center border border-emerald-600/20 flex items-center justify-center gap-1.5"
+              >
+                <MessageCircle className="w-3.5 h-3.5" />
+                WhatsApp
+              </a>
+            </div>
           </div>
         </div>
       </div>

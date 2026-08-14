@@ -4,22 +4,23 @@ import { PrismBackground } from "@/components/prism-background"
 import { site } from "@/lib/site-config"
 
 export const metadata = {
-  title: "Contact",
+  title: "Contact Us | The Second Home Boys Hostel Lahore",
   description:
-    "Get in touch with The Second Home Hostel in Gunj Bakhsh, near UVAS. Call or message us on WhatsApp to book your room.",
+    "Get in touch with The Second Home Boys Hostel in Gunj Baksh Town, Lahore near UVAS. Call +923032518181 or message us on WhatsApp to book your room.",
 }
 
 const details = [
   {
     icon: MapPin,
-    label: "Location",
+    label: "Hostel Location",
     value: `${site.location.line1}, ${site.location.line2}`,
+    href: "https://maps.google.com/?q=40+Rattigan+Road+Gunj+Baksh+Town+Lahore",
     color: "#f59e0b",
     bg: "#fef3c7",
   },
   {
     icon: Phone,
-    label: "Phone",
+    label: "Phone / Call",
     value: site.phoneDisplay,
     href: `tel:${site.phoneRaw}`,
     color: "#3b82f6",
@@ -27,7 +28,7 @@ const details = [
   },
   {
     icon: MessageCircle,
-    label: "WhatsApp",
+    label: "WhatsApp Booking",
     value: site.phoneDisplay,
     href: site.whatsappLinkWithMessage,
     color: "#10b981",
@@ -35,8 +36,8 @@ const details = [
   },
   {
     icon: Clock,
-    label: "Availability",
-    value: "Open all day for calls & messages",
+    label: "Resident Assistance",
+    value: "Open 24/7 for resident support & calls in Lahore",
     color: "#8b5cf6",
     bg: "#f5f3ff",
   },
@@ -62,7 +63,7 @@ export default function ContactPage() {
           <Reveal>
             <span className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.25em] text-amber-600 bg-amber-50 border border-amber-200/80 px-4 py-1.5 rounded-full">
               <Sparkles className="h-3.5 w-3.5" />
-              Contact Us
+              Contact Us • Lahore
             </span>
           </Reveal>
 
@@ -88,9 +89,8 @@ export default function ContactPage() {
           </Reveal>
 
           <Reveal delay={0.2}>
-            <p className="mt-6 text-lg text-black/55 max-w-xl mx-auto leading-relaxed">
-              Have a question about availability, pricing, or a visit? Reach
-              out — we usually reply within minutes on WhatsApp.
+            <p className="mt-6 text-base sm:text-lg text-black/60 max-w-xl mx-auto leading-relaxed">
+              Have a question about room availability, pricing, or scheduling a visit to {site.name} in Gunj Baksh Town, Lahore? Reach out to us — we usually reply within minutes on WhatsApp or phone.
             </p>
           </Reveal>
         </div>
@@ -98,7 +98,6 @@ export default function ContactPage() {
 
       {/* ── CONTACT CARD ─────────────────────────────────────────────────── */}
       <section className="relative pb-28 overflow-hidden">
-        {/* Subtle light blobs */}
         <div
           className="pointer-events-none absolute top-0 left-1/4 w-96 h-96 rounded-full opacity-[0.06]"
           style={{ background: "radial-gradient(circle, #f59e0b, transparent 70%)", filter: "blur(80px)" }}
@@ -118,9 +117,9 @@ export default function ContactPage() {
                     <MessageCircle className="h-6 w-6" />
                   </div>
                   <div>
-                    <p className="text-xs text-black/40 uppercase tracking-widest">Reach us at</p>
+                    <p className="text-xs text-black/45 uppercase tracking-widest">Reach out to</p>
                     <h2
-                      className="text-xl font-bold text-[#111]"
+                      className="text-xl sm:text-2xl font-bold text-[#111]"
                       style={{ fontFamily: '"IBM Plex Sans", sans-serif' }}
                     >
                       {site.name}
@@ -161,8 +160,15 @@ export default function ContactPage() {
                 ))}
               </div>
 
-              {/* CTA */}
+              {/* CTA Buttons */}
               <div className="px-8 sm:px-12 pb-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a
+                  href={`tel:${site.phoneRaw}`}
+                  className="w-full sm:w-auto flex items-center justify-center gap-2.5 px-8 py-4 rounded-2xl font-semibold text-[#111] text-sm border border-black/[0.12] bg-white hover:bg-[#fafaf8] hover:border-black/25 hover:-translate-y-0.5 hover:shadow-md transition-all duration-300 active:scale-[0.97]"
+                >
+                  <Phone className="h-4 w-4 text-amber-600" />
+                  Call {site.phoneDisplay}
+                </a>
                 <a
                   href={site.whatsappLinkWithMessage}
                   target="_blank"
@@ -174,21 +180,14 @@ export default function ContactPage() {
                   Book on WhatsApp
                   <ArrowRight className="h-4 w-4" />
                 </a>
-                <a
-                  href={`tel:${site.phoneRaw}`}
-                  className="w-full sm:w-auto flex items-center justify-center gap-2.5 px-8 py-4 rounded-2xl font-semibold text-[#111] text-sm border border-black/[0.10] bg-white hover:bg-[#fafaf8] hover:border-black/20 hover:-translate-y-0.5 hover:shadow-md transition-all duration-300 active:scale-[0.97]"
-                >
-                  <Phone className="h-4 w-4" />
-                  Call Now
-                </a>
               </div>
             </div>
           </Reveal>
 
           {/* Footnote */}
           <Reveal delay={0.3}>
-            <p className="mt-8 text-center text-xs text-black/35 leading-relaxed">
-              {site.location.full} · Typically responds in under 5 minutes
+            <p className="mt-8 text-center text-xs text-black/40 leading-relaxed">
+              {site.location.full} · Typically responds within 5 minutes
             </p>
           </Reveal>
         </div>

@@ -2,20 +2,22 @@
 
 import { useEffect, useState } from "react"
 
-const LETTERS = ["T", "H", "E", " ", "S", "E", "C", "O", "N", "D", " ", "H", "O", "M", "E"]
+const WORDS = ["THE", "SECOND", "HOME", "BOYS", "HOSTEL"]
+const FULL_STRING = "THE SECOND HOME BOYS HOSTEL"
+const LETTERS = FULL_STRING.split("")
 
-const LETTER_IN_STAGGER = 70
-const LETTER_IN_DUR = 600
-const HOLD_DURATION = 250
+const LETTER_IN_STAGGER = 45
+const LETTER_IN_DUR = 500
+const HOLD_DURATION = 200
 const LETTERS_IN_TOTAL = LETTER_IN_STAGGER * (LETTERS.length - 1) + LETTER_IN_DUR + HOLD_DURATION
 
-const LETTER_OUT_STAGGER = 45
-const LETTER_OUT_DUR = 400
+const LETTER_OUT_STAGGER = 30
+const LETTER_OUT_DUR = 350
 const LETTERS_OUT_TOTAL = LETTER_OUT_STAGGER * (LETTERS.length - 1) + LETTER_OUT_DUR
 
-const CURTAIN_DELAY = LETTERS_IN_TOTAL + 100
-const CURTAIN_DURATION = 1200
-const ANIM_TOTAL = CURTAIN_DELAY + LETTERS_OUT_TOTAL + 1200
+const CURTAIN_DELAY = LETTERS_IN_TOTAL + 80
+const CURTAIN_DURATION = 1000
+const ANIM_TOTAL = CURTAIN_DELAY + LETTERS_OUT_TOTAL + 1000
 
 export const INTRO_DURATION_MS = CURTAIN_DELAY + CURTAIN_DURATION
 export const HERO_REVEAL_MS = CURTAIN_DELAY + CURTAIN_DURATION - 150
@@ -49,56 +51,58 @@ export function IntroAnimation({ onDone }) {
         className="absolute inset-x-0 top-0"
         style={{
           bottom: curtainUp ? "100%" : "0%",
-          transition: curtainUp ? "bottom 1.2s cubic-bezier(0.76, 0, 0.24, 1)" : "none",
+          transition: curtainUp ? "bottom 1.0s cubic-bezier(0.76, 0, 0.24, 1)" : "none",
           background: "#f5f4f1",
         }}
       />
 
       {/* Letters reveal */}
-      <div className="absolute inset-0 flex items-center justify-center">
-        <div className="flex" style={{ gap: "0.04em" }}>
-          {LETTERS.map((letter, i) => {
-            if (letter === " ") {
-              return <span key={i} className="inline-block w-4 sm:w-8" />
-            }
-
-            const inDelay = i * LETTER_IN_STAGGER
-            const outDelay = i * LETTER_OUT_STAGGER
-
-            const isIdle = phase === "idle"
-            const isIn = phase === "in"
-            const isOut = phase === "out"
-
-            const opacity = isIdle ? 0 : isIn ? 1 : 0
-            const blur = isIdle ? 36 : isIn ? 0 : 24
-            const translateY = isIdle ? 48 : isIn ? 0 : -20
-
-            const transition = isOut
-              ? `opacity ${LETTER_OUT_DUR}ms cubic-bezier(0.4,0,1,1) ${outDelay}ms,
-                 filter  ${LETTER_OUT_DUR}ms cubic-bezier(0.4,0,1,1) ${outDelay}ms,
-                 transform ${LETTER_OUT_DUR}ms cubic-bezier(0.4,0,1,1) ${outDelay}ms`
-              : isIn
-              ? `opacity ${LETTER_IN_DUR}ms cubic-bezier(0.16,1,0.3,1) ${inDelay}ms,
-                 filter  ${LETTER_IN_DUR}ms cubic-bezier(0.16,1,0.3,1) ${inDelay}ms,
-                 transform ${LETTER_IN_DUR}ms cubic-bezier(0.16,1,0.3,1) ${inDelay}ms`
-              : "none"
-
+      <div className="absolute inset-0 flex flex-col items-center justify-center px-4">
+        <div className="flex flex-wrap justify-center items-center gap-x-3 sm:gap-x-5 gap-y-2 max-w-5xl">
+          {WORDS.map((word, wordIdx) => {
+            const startOffset = WORDS.slice(0, wordIdx).reduce((acc, w) => acc + w.length + 1, 0)
             return (
-              <span
-                key={i}
-                className="font-sans font-bold text-[#111] leading-none select-none"
-                style={{
-                  fontSize: `calc((90vw - 48px) / ${LETTERS.length})`,
-                  letterSpacing: "0.04em",
-                  opacity,
-                  filter: `blur(${blur}px)`,
-                  transform: `translateY(${translateY}px)`,
-                  transition,
-                  willChange: "opacity, filter, transform",
-                }}
-              >
-                {letter}
-              </span>
+              <div key={word} className="flex" style={{ gap: "0.04em" }}>
+                {word.split("").map((letter, letterIdx) => {
+                  const globalIdx = startOffset + letterIdx
+                  const inDelay = globalIdx * LETTER_IN_STAGGER
+                  const outDelay = globalIdx * LETTER_OUT_STAGGER
+
+                  const isIdle = phase === "idle"
+                  const isIn = phase === "in"
+                  const isOut = phase === "out"
+
+                  const opacity = isIdle ? 0 : isIn ? 1 : 0
+                  const blur = isIdle ? 28 : isIn ? 0 : 20
+                  const translateY = isIdle ? 36 : isIn ? 0 : -16
+
+                  const transition = isOut
+                    ? `opacity ${LETTER_OUT_DUR}ms cubic-bezier(0.4,0,1,1) ${outDelay}ms,
+                       filter  ${LETTER_OUT_DUR}ms cubic-bezier(0.4,0,1,1) ${outDelay}ms,
+                       transform ${LETTER_OUT_DUR}ms cubic-bezier(0.4,0,1,1) ${outDelay}ms`
+                    : isIn
+                    ? `opacity ${LETTER_IN_DUR}ms cubic-bezier(0.16,1,0.3,1) ${inDelay}ms,
+                       filter  ${LETTER_IN_DUR}ms cubic-bezier(0.16,1,0.3,1) ${inDelay}ms,
+                       transform ${LETTER_IN_DUR}ms cubic-bezier(0.16,1,0.3,1) ${inDelay}ms`
+                    : "none"
+
+                  return (
+                    <span
+                      key={letterIdx}
+                      className="font-sans font-bold text-[#111] leading-none select-none text-2xl sm:text-4xl md:text-5xl lg:text-6xl tracking-wider"
+                      style={{
+                        opacity,
+                        filter: `blur(${blur}px)`,
+                        transform: `translateY(${translateY}px)`,
+                        transition,
+                        willChange: "opacity, filter, transform",
+                      }}
+                    >
+                      {letter}
+                    </span>
+                  )
+                })}
+              </div>
             )
           })}
         </div>

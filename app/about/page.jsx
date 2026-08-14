@@ -70,7 +70,7 @@ const stats = [
   { value: "2", label: "Room Types (2 & 3 Seater)" },
   { value: "3+", label: "Campuses in Lahore" },
   { value: "24/7", label: "Security & Support" },
-  { value: "UVAS · GCU · UOE", label: "Near Campuses" },
+  { value: "UVAS · GCU · UOE", label: "Walking Distance" },
 ]
 
 export default function AboutPage() {

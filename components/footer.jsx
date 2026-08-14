@@ -1,13 +1,14 @@
 import Link from "next/link"
-import { MapPin, Phone, MessageCircle, Home } from "lucide-react"
-import { site, navLinks } from "@/lib/site-config"
+import { MapPin, Phone, MessageCircle, Home, ShieldAlert, HelpCircle, FileText, ArrowRight } from "lucide-react"
+import { site, navLinks, footerImportantLinks } from "@/lib/site-config"
 
 export function Footer() {
   return (
     <footer className="relative border-t border-black/10 bg-[#faf9f6]">
       <div className="mx-auto max-w-6xl px-4 py-16">
-        <div className="grid gap-10 md:grid-cols-4">
-          <div className="md:col-span-2">
+        <div className="grid gap-10 md:grid-cols-12">
+          {/* Brand Info */}
+          <div className="md:col-span-5">
             <Link href="/" className="flex items-center gap-2 mb-4">
               <span className="flex h-9 w-9 items-center justify-center rounded-full bg-amber-500/15 text-amber-700">
                 <Home className="h-4 w-4" />
@@ -17,35 +18,56 @@ export function Footer() {
             <p className="text-sm text-black/60 leading-relaxed max-w-sm">
               {site.description}
             </p>
+            <div className="mt-4 inline-flex items-center gap-1.5 text-xs text-black/50 font-medium">
+              <MapPin className="h-3.5 w-3.5 text-amber-600 shrink-0" />
+              <span>Gunj Baksh Town, Lahore — Near UVAS, GCU &amp; UOE</span>
+            </div>
           </div>
 
-          <div>
-            <h4 className="text-sm font-semibold mb-4 text-[#111]">Quick Links</h4>
-            <ul className="space-y-3">
+          {/* Quick Links */}
+          <div className="md:col-span-2">
+            <h4 className="text-xs font-bold uppercase tracking-wider mb-4 text-[#111]">
+              Quick Links
+            </h4>
+            <ul className="space-y-2.5">
               {navLinks.map((link) => (
                 <li key={link.label}>
                   <Link
                     href={link.href}
-                    className="text-sm text-black/60 hover:text-black transition-colors"
+                    className="text-xs sm:text-sm text-black/65 hover:text-black transition-colors"
                   >
                     {link.label}
                   </Link>
                 </li>
               ))}
-              <li>
-                <Link
-                  href="/privacy-policy"
-                  className="text-sm text-black/60 hover:text-black transition-colors"
-                >
-                  Privacy Policy
-                </Link>
-              </li>
             </ul>
           </div>
 
-          <div>
-            <h4 className="text-sm font-semibold mb-4 text-[#111]">Get in Touch</h4>
-            <ul className="space-y-3 text-sm text-black/60">
+          {/* Important Links (Hostel Rules, FAQ, Privacy Policy) */}
+          <div className="md:col-span-2">
+            <h4 className="text-xs font-bold uppercase tracking-wider mb-4 text-[#111]">
+              Important Links
+            </h4>
+            <ul className="space-y-2.5">
+              {footerImportantLinks.map((link) => (
+                <li key={link.label}>
+                  <Link
+                    href={link.href}
+                    className="text-xs sm:text-sm text-black/65 hover:text-black hover:font-medium transition-colors inline-flex items-center gap-1.5"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Get in Touch */}
+          <div className="md:col-span-3">
+            <h4 className="text-xs font-bold uppercase tracking-wider mb-4 text-[#111]">
+              Get in Touch
+            </h4>
+            <ul className="space-y-3 text-xs sm:text-sm text-black/65">
               <li className="flex items-start gap-2">
                 <MapPin className="h-4 w-4 mt-0.5 text-amber-600 shrink-0" />
                 <a
@@ -84,9 +106,19 @@ export function Footer() {
           <p className="text-xs text-black/50">
             © {new Date().getFullYear()} {site.name}. All rights reserved.
           </p>
-          <p className="text-xs text-black/50">
-            Comfortable, secure boys hostel near UVAS, GCU &amp; UOE in Gunj Baksh Town, Lahore.
-          </p>
+          <div className="flex items-center gap-4 text-xs text-black/50">
+            <Link href="/hostel-rules" className="hover:text-black transition-colors">
+              Hostel Rules
+            </Link>
+            <span>•</span>
+            <Link href="/faq" className="hover:text-black transition-colors">
+              FAQ
+            </Link>
+            <span>•</span>
+            <Link href="/privacy-policy" className="hover:text-black transition-colors">
+              Privacy Policy
+            </Link>
+          </div>
         </div>
       </div>
     </footer>

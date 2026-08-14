@@ -218,14 +218,13 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Marquee animations */
-@keyframes marqueeLeft {
-  from { transform: translateX(0); }
-  to   { transform: translateX(-33.333%); }
+/* Hide scrollbar */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
 }
-@keyframes marqueeRight {
-  from { transform: translateX(-33.333%); }
-  to   { transform: translateX(0); }
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 /* Hide Next.js dev tools overlay indicator badge */
@@ -295,24 +294,18 @@ button[aria-label*="Next.js"],
   animation: float-slower 12s ease-in-out infinite;
 }
 
-/* ─── Prism icon float variants ─────────────────────────────────────────────── */
-@keyframes prism-float-0 {
-  0%, 100% { transform: translate(0px, 0px) rotate(0deg); }
-  50%       { transform: translate(var(--drift-x, 12px), var(--drift-y, -10px)) rotate(var(--rotate, 10deg)); }
-}
-@keyframes prism-float-1 {
-  0%, 100% { transform: translate(0px, 0px) rotate(0deg); }
-  40%       { transform: translate(calc(var(--drift-x, 8px) * -0.5), var(--drift-y, 8px)) rotate(calc(var(--rotate, 8deg) * -0.7)); }
-  100%      { transform: translate(0px, 0px) rotate(0deg); }
-}
-@keyframes prism-float-2 {
-  0%, 100% { transform: translate(0px, 0px) rotate(0deg) scale(1); }
-  50%       { transform: translate(var(--drift-x, -10px), calc(var(--drift-y, 6px) * 1.2)) rotate(var(--rotate, -12deg)) scale(1.05); }
-}
-@keyframes prism-float-3 {
-  0%   { transform: translate(0px, 0px) rotate(0deg); }
-  33%  { transform: translate(calc(var(--drift-x, 10px) * 0.6), var(--drift-y, -8px)) rotate(calc(var(--rotate, 6deg) * 0.5)); }
-  66%  { transform: translate(var(--drift-x, 10px), calc(var(--drift-y, -8px) * -0.3)) rotate(var(--rotate, 6deg)); }
-  100% { transform: translate(0px, 0px) rotate(0deg); }
+/* ─── Lightbox Modal FadeIn ─────────────────────────────────────────────────── */
+@keyframes modal-fade-in {
+  from {
+    opacity: 0;
+    transform: scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
+.animate-fadeIn {
+  animation: modal-fade-in 0.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}

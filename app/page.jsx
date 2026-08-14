@@ -2,7 +2,29 @@
 
 import React, { useRef, useEffect, useState, useCallback } from "react"
 import Link from "next/link"
-import { MessageCircle, ArrowRight, ShieldCheck, Wifi, BedDouble, MapPin, Sparkles, Phone, CheckCircle2, HeartHandshake, Zap, Utensils, Droplets, BookOpen, Clock } from "lucide-react"
+import {
+  MessageCircle,
+  ArrowRight,
+  ShieldCheck,
+  Wifi,
+  BedDouble,
+  MapPin,
+  Sparkles,
+  Phone,
+  CheckCircle2,
+  HeartHandshake,
+  Zap,
+  Utensils,
+  Droplets,
+  BookOpen,
+  Clock,
+  Camera,
+  Layers,
+  Footprints,
+  Bus,
+  Store,
+  Navigation,
+} from "lucide-react"
 import { IntroAnimation, HERO_REVEAL_MS } from "@/components/intro-animation"
 import { PixelIcon } from "@/components/pixel-icon"
 import { Reveal } from "@/components/reveal"
@@ -10,7 +32,7 @@ import { RevealText } from "@/components/reveal-text"
 import { StackingAgentCards } from "@/components/stacking-agent-cards"
 import { DevExSection } from "@/components/devex-section"
 import { Footer } from "@/components/footer"
-import { site, rooms, securityFee, facilities } from "@/lib/site-config"
+import { site, rooms, securityFee, facilities, galleryItems } from "@/lib/site-config"
 
 // ─── Intersection Observer hook ──────────────────────────────────────────────
 function useInView(threshold = 0.15) {
@@ -216,36 +238,46 @@ export default function Page() {
               Call {site.phoneDisplay}
             </a>
             <Link
-              href="/rooms"
-              className="inline-flex items-center gap-2 px-5 py-3.5 rounded-xl text-black/80 font-medium text-sm hover:text-black hover:underline transition-all"
+              href="/gallery"
+              className="inline-flex items-center gap-2 px-5 py-3.5 rounded-xl border border-black/10 bg-white/60 text-black/90 font-semibold text-sm hover:bg-white transition-all shadow-xs"
             >
-              View Room Details
+              <Camera className="h-4 w-4 text-amber-600" />
+              View Photo Gallery
               <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
 
-          {/* University Location Chips */}
+          {/* University & Location Distance Chips */}
           <div className="flex flex-wrap gap-2.5 pt-6 border-t border-black/10">
             {[
-              { label: "Walking Distance to UVAS Lahore" },
-              { label: "Near GCU Lahore" },
-              { label: "Near UOE" },
-              { label: "Gunj Baksh Town, Lahore" },
-            ].map((u, i) => (
-              <div
-                key={u.label}
-                style={{
-                  opacity: heroReady ? 1 : 0,
-                  filter: heroReady ? "blur(0px)" : "blur(16px)",
-                  transform: heroReady ? "translateY(0px)" : "translateY(20px)",
-                  transition: `opacity 0.8s cubic-bezier(0.16,1,0.3,1) ${120 + i * 80}ms, filter 0.8s cubic-bezier(0.16,1,0.3,1) ${120 + i * 80}ms, transform 0.8s cubic-bezier(0.16,1,0.3,1) ${120 + i * 80}ms`,
-                }}
-                className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full border border-black/10 bg-white/80 backdrop-blur-sm text-xs font-medium text-black/75 shadow-xs"
-              >
-                <MapPin className="h-3 w-3 text-amber-600" />
-                {u.label}
-              </div>
-            ))}
+              { label: "2 Mins Walk to UVAS Lahore", icon: Footprints, highlight: true },
+              { label: "Walking Distance to GCU Lahore", icon: Footprints, highlight: false },
+              { label: "Walking Distance to UOE (University of Education)", icon: Footprints, highlight: false },
+              { label: "40-Rattigan Road, Gunj Baksh Town, Lahore", icon: MapPin, highlight: false },
+              { label: "Easy Access to Metro Bus & Public Transit", icon: Bus, highlight: false },
+              { label: "Surrounded by Student Food, Cafes & Markets", icon: Store, highlight: false },
+            ].map((u, i) => {
+              const Icon = u.icon
+              return (
+                <div
+                  key={u.label}
+                  style={{
+                    opacity: heroReady ? 1 : 0,
+                    filter: heroReady ? "blur(0px)" : "blur(16px)",
+                    transform: heroReady ? "translateY(0px)" : "translateY(20px)",
+                    transition: `opacity 0.8s cubic-bezier(0.16,1,0.3,1) ${100 + i * 60}ms, filter 0.8s cubic-bezier(0.16,1,0.3,1) ${100 + i * 60}ms, transform 0.8s cubic-bezier(0.16,1,0.3,1) ${100 + i * 60}ms`,
+                  }}
+                  className={`inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full border backdrop-blur-sm text-xs font-medium transition-all ${
+                    u.highlight
+                      ? "border-amber-400/80 bg-amber-50/90 text-amber-950 font-semibold shadow-xs"
+                      : "border-black/10 bg-white/80 text-black/75 shadow-xs"
+                  }`}
+                >
+                  <Icon className={`h-3.5 w-3.5 ${u.highlight ? "text-amber-600" : "text-amber-600"}`} />
+                  {u.label}
+                </div>
+              )
+            })}
           </div>
         </div>
       </section>
@@ -268,7 +300,7 @@ export default function Page() {
             <BentoCard className="col-span-12 md:col-span-6 flex flex-col justify-between" delay={0}>
               <div className="relative h-56 sm:h-64 w-full overflow-hidden bg-black/5">
                 <img
-                  src="https://images.unsplash.com/photo-1555854877-bab0e564b8d5?auto=format&fit=crop&w=1200&q=80"
+                  src="/IMG-20260806-WA0089.jpg"
                   alt="Three Seater Room at The Second Home Boys Hostel Lahore"
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
@@ -340,7 +372,7 @@ export default function Page() {
             <BentoCard className="col-span-12 md:col-span-6 flex flex-col justify-between" delay={100}>
               <div className="relative h-56 sm:h-64 w-full overflow-hidden bg-black/5">
                 <img
-                  src="https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?auto=format&fit=crop&w=1200&q=80"
+                  src="/IMG-20260815-WA0002.jpg"
                   alt="Two Seater Room at The Second Home Boys Hostel Lahore"
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
@@ -448,8 +480,74 @@ export default function Page() {
         </div>
       </section>
 
-      {/* WHY CHOOSE US SECTION */}
+      {/* ── PHOTO GALLERY SHOWCASE (EXACT SEQUENCE 1..8) ──────────────── */}
       <section className="py-20 sm:py-28 px-4 sm:px-6 md:px-12 lg:px-20 bg-white border-y border-black/[0.06]">
+        <div className="max-w-6xl mx-auto">
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+            <div>
+              <Tag>PHOTO GALLERY</Tag>
+              <h2
+                className="text-3xl sm:text-4xl md:text-5xl font-light tracking-tight text-[#111] mt-4"
+                style={{ fontFamily: '"IBM Plex Sans", sans-serif' }}
+              >
+                Take a look inside our hostel
+              </h2>
+              <p className="text-sm sm:text-base text-black/60 mt-3 max-w-xl leading-relaxed">
+                Authentic photos of {site.name} in Gunj Baksh Town, Lahore — from furnished bedrooms to study areas and clean facilities.
+              </p>
+            </div>
+            <Link
+              href="/gallery"
+              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-2xl bg-black text-white text-xs sm:text-sm font-semibold hover:bg-black/80 transition-all shadow-md shrink-0 w-fit"
+            >
+              <Camera className="w-4 h-4 text-amber-400" />
+              Open Full Gallery (8 Photos)
+              <ArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
+
+          {/* 8-Photo Showcase Grid in Exact Sequence */}
+          <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-4 sm:gap-5">
+            {galleryItems.map((item) => (
+              <Link
+                key={item.id}
+                href="/gallery"
+                className="group relative aspect-[4/5] rounded-2xl overflow-hidden border border-black/[0.08] bg-black/5 block shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
+              >
+                <img
+                  src={item.src}
+                  alt={item.alt}
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  loading="lazy"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+                <div className="absolute top-3 left-3 px-2.5 py-0.5 rounded-full text-[10px] font-bold tracking-wider uppercase bg-white/90 text-black backdrop-blur-md">
+                  {item.badge}
+                </div>
+                <div className="absolute bottom-3 inset-x-3 text-white">
+                  <h4 className="text-xs sm:text-sm font-bold leading-tight drop-shadow-md">
+                    {item.title}
+                  </h4>
+                </div>
+              </Link>
+            ))}
+          </div>
+
+          <div className="mt-8 text-center">
+            <Link
+              href="/gallery"
+              className="inline-flex items-center gap-2 text-xs sm:text-sm font-semibold text-emerald-800 hover:text-emerald-950 bg-emerald-50 border border-emerald-200/80 px-6 py-2.5 rounded-full transition-all shadow-xs"
+            >
+              <Sparkles className="w-3.5 h-3.5 text-amber-600" />
+              Click any photo to view in high-resolution Lightbox view
+              <ArrowRight className="w-3.5 h-3.5" />
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* WHY CHOOSE US SECTION */}
+      <section className="py-20 sm:py-28 px-4 sm:px-6 md:px-12 lg:px-20 bg-[#faf9f6]">
         <div className="max-w-6xl mx-auto">
           <div className="max-w-3xl mb-16">
             <Tag>WHY CHOOSE US</Tag>
@@ -467,7 +565,7 @@ export default function Page() {
               return (
                 <div
                   key={p.title}
-                  className="p-6 sm:p-7 rounded-2xl border border-black/[0.07] bg-[#fafaf8] hover:border-black/[0.18] hover:-translate-y-1 hover:shadow-md transition-all duration-300 flex flex-col justify-between"
+                  className="p-6 sm:p-7 rounded-2xl border border-black/[0.07] bg-white hover:border-black/[0.18] hover:-translate-y-1 hover:shadow-md transition-all duration-300 flex flex-col justify-between"
                 >
                   <div>
                     <div
@@ -484,7 +582,7 @@ export default function Page() {
             })}
           </div>
 
-          <div className="mt-14 p-8 rounded-2xl bg-[#faf9f6] border border-black/[0.08] flex flex-col md:flex-row items-center justify-between gap-6">
+          <div className="mt-14 p-8 rounded-2xl bg-white border border-black/[0.08] flex flex-col md:flex-row items-center justify-between gap-6 shadow-sm">
             <div className="flex items-center gap-4">
               <div className="w-12 h-12 rounded-2xl bg-amber-500/10 text-amber-700 flex items-center justify-center shrink-0">
                 <MapPin className="w-6 h-6" />
@@ -499,7 +597,7 @@ export default function Page() {
             <div className="flex items-center gap-3 w-full md:w-auto">
               <a
                 href={`tel:${site.phoneRaw}`}
-                className="flex-1 md:flex-none text-center px-5 py-3 rounded-xl border border-black/15 bg-white text-xs font-semibold text-black hover:bg-black/[0.03] transition-all"
+                className="flex-1 md:flex-none text-center px-5 py-3 rounded-xl border border-black/15 bg-[#fafaf8] text-xs font-semibold text-black hover:bg-black/[0.03] transition-all"
               >
                 Call {site.phoneDisplay}
               </a>

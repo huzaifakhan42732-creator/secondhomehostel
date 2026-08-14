@@ -24,6 +24,21 @@ Key business facts (also centralized in `lib/site-config.js`):
 | Three Seater Room | Common Bathroom (Starting from Affordable Monthly Rates) |
 | Two Seater Room | Attached Bathroom (Starting from Affordable Monthly Rates) |
 | Security Deposit | Refundable Security Deposit (compulsory, one-time, 100% refundable) |
+| Hostel Entry Timings | 5:00 AM to 11:00 PM (Late entry after 11:00 PM with valid reason only) |
+
+### Navigation Structure
+- **Main / Header Navigation (`navLinks`)**: Home, Rooms, Facilities, Gallery, About, Contact.
+- **Footer-Only Important Links (`footerImportantLinks`)**: Hostel Rules (`/hostel-rules`), FAQ (`/faq`), Privacy Policy (`/privacy-policy`).
+
+### Gallery Exact Image Sequence (Strict Requirement)
+1. **Office wali** (`/IMG-20260806-WA0092.jpg`)
+2. **Bed wali** (`/IMG-20260815-WA0002.jpg`)
+3. **Mattress wali** (`/IMG-20260815-WA0006.jpg`)
+4. **Galleries wali** (`/IMG-20260815-WA0012.jpg`)
+5. **Kitchen wali** (`/IMG-20260806-WA0083.jpg`)
+6. **Newspaper wali** (`/IMG-20260815-WA0011.jpg`)
+7. **Washing machine wali** (`/IMG-20260815-WA0013.jpg`)
+8. **Washrooms wali** (`/IMG-20260806-WA0079.jpg`)
 
 There is **no booking backend**. All booking flows resolve to opening
 `https://wa.me/923032518181` (see `site.whatsappLinkWithMessage`) or `tel:+923032518181`.
@@ -50,7 +65,10 @@ app/
   page.jsx                 Home
   about/page.jsx
   rooms/page.jsx
+  gallery/page.jsx         Dedicated Photo Gallery page
   facilities/page.jsx
+  hostel-rules/page.jsx    Hostel Rules & Regulations page (Footer link)
+  faq/page.jsx             Frequently Asked Questions page (Footer link)
   contact/page.jsx
   privacy-policy/page.jsx
   not-found.jsx             Custom 404
@@ -59,6 +77,7 @@ components/
   footer.jsx
   whatsapp-fab.jsx          Floating WhatsApp button (client component)
   mobile-nav.jsx            Floating header navigation & mobile menu
+  hostel-gallery.jsx        Interactive Gallery with Lightbox modal
   ambient-background.jsx    Reusable animated gradient-blob background
   reveal.jsx                Reveal / RevealGroup / RevealItem (framer-motion scroll animations)
   stacking-agent-cards.jsx  Room cards and policy cards
@@ -75,7 +94,7 @@ lib/
 
 - **JSX only.** No TypeScript syntax, no `.ts`/`.tsx` extensions.
 - Functional components only, no class components.
-- All hostel facts (phone, address, room features, facilities list)
+- All hostel facts (phone, address, room features, facilities list, gallery items)
   live in `lib/site-config.js`. **Never hardcode these values in a page.**
   Import from `@/lib/site-config` so a single edit updates the whole site.
 - Use the `cn()` helper (`@/lib/utils`) instead of manual string

@@ -116,7 +116,7 @@ export function HostelGallery() {
           </span>
         </div>
         <span className="text-[11px] text-amber-800 font-semibold hidden sm:inline-block">
-          8 Key Facilities
+          {items.length} Photos Available
         </span>
       </div>
 

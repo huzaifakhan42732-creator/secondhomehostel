@@ -7,19 +7,6 @@ import { site } from "@/lib/site-config"
 const CARDS = [
   {
     label: "ROOM TYPE 1",
-    title: "Three Seater Room",
-    desc: "A spacious shared room designed specifically for focus and comfort, making it ideal for university students who appreciate good company without giving up their personal study space. Enjoy a well-ventilated, fully furnished room with access to a clean common bathroom and all essential hostel amenities.",
-    stats: [
-      { v: "3 Beds", l: "Occupancy" },
-      { v: "Common", l: "Bathroom" },
-      { v: "Furnished", l: "Move-in Ready" },
-      { v: "Wi-Fi", l: "High-Speed" },
-    ],
-    img: "https://images.unsplash.com/photo-1555854877-bab0e564b8d5?auto=format&fit=crop&w=1200&q=80",
-    action: "Inquire 3-Seater Rates",
-  },
-  {
-    label: "ROOM TYPE 2",
     title: "Two Seater Room",
     desc: "A quieter, more private setup for students and young professionals who prefer a peaceful environment with just one roommate. Features fully furnished interiors, an attached bathroom, comfortable bedding, and dedicated storage to give you a restful and productive living experience.",
     stats: [
@@ -30,6 +17,19 @@ const CARDS = [
     ],
     img: "https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?auto=format&fit=crop&w=1200&q=80",
     action: "Inquire 2-Seater Rates",
+  },
+  {
+    label: "ROOM TYPE 2",
+    title: "Three Seater Room",
+    desc: "A spacious shared room designed specifically for focus and comfort, making it ideal for university students who appreciate good company without giving up their personal study space. Enjoy a well-ventilated, fully furnished room with access to a clean common bathroom and all essential hostel amenities.",
+    stats: [
+      { v: "3 Beds", l: "Occupancy" },
+      { v: "Common", l: "Bathroom" },
+      { v: "Furnished", l: "Move-in Ready" },
+      { v: "Wi-Fi", l: "High-Speed" },
+    ],
+    img: "https://images.unsplash.com/photo-1555854877-bab0e564b8d5?auto=format&fit=crop&w=1200&q=80",
+    action: "Inquire 3-Seater Rates",
   },
   {
     label: "SECURITY POLICY",

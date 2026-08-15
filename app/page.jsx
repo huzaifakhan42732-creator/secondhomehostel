@@ -296,80 +296,8 @@ export default function Page() {
           </div>
 
           <div className="grid grid-cols-12 gap-5" onMouseMove={handleMouse}>
-            {/* Three Seater Room Bento */}
-            <BentoCard className="col-span-12 md:col-span-6 flex flex-col justify-between" delay={0}>
-              <div className="relative h-56 sm:h-64 w-full overflow-hidden bg-black/5">
-                <img
-                  src="/IMG-20260806-WA0089.jpg"
-                  alt="Three Seater Room at The Second Home Boys Hostel Lahore"
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                />
-                <div className="absolute top-4 left-4 flex gap-2">
-                  <span className="px-3 py-1 rounded-full text-xs font-semibold bg-white/90 backdrop-blur-md text-black shadow-sm">
-                    Three Seater Room
-                  </span>
-                  <span className="px-3 py-1 rounded-full text-xs font-semibold bg-amber-500 text-white shadow-sm">
-                    Common Bathroom
-                  </span>
-                </div>
-                <div className="absolute bottom-4 right-4 px-3 py-1 rounded-full text-xs font-semibold bg-black/80 backdrop-blur-md text-white">
-                  Starting from Affordable Rates
-                </div>
-              </div>
-
-              <div className="p-6 sm:p-8 flex-1 flex flex-col justify-between">
-                <div>
-                  <h3 className="text-2xl font-light mb-3 text-[#111]">Three Seater Room</h3>
-                  <p className="text-sm text-black/65 leading-relaxed mb-6">
-                    A spacious shared room designed specifically for focus and comfort, making it ideal for university students who appreciate good company without giving up their personal study space. Enjoy a well-ventilated, fully furnished room with access to a clean common bathroom and all essential hostel amenities.
-                  </p>
-                  <div className="text-xs font-semibold text-black/45 uppercase tracking-wider mb-3">
-                    Included Room Facilities:
-                  </div>
-                  <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs text-black/80">
-                    <li className="flex items-center gap-2">
-                      <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
-                      Common Bathroom
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
-                      Well Furnished Interiors
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
-                      Comfortable Beds &amp; Mattresses
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
-                      Dedicated Study Space
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
-                      High-Speed Wi-Fi
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
-                      Storage Wardrobes
-                    </li>
-                  </ul>
-                </div>
-
-                <div className="mt-8 pt-6 border-t border-black/[0.07] flex items-center justify-between">
-                  <span className="text-xs font-medium text-black/50">3 Beds Capacity</span>
-                  <a
-                    href={site.whatsappLinkWithMessage}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 text-xs font-semibold text-emerald-700 hover:text-emerald-800 bg-emerald-50 px-3.5 py-1.5 rounded-lg border border-emerald-600/20"
-                  >
-                    Inquire Rates on WhatsApp <ArrowRight className="w-3.5 h-3.5" />
-                  </a>
-                </div>
-              </div>
-            </BentoCard>
-
             {/* Two Seater Room Bento */}
-            <BentoCard className="col-span-12 md:col-span-6 flex flex-col justify-between" delay={100}>
+            <BentoCard className="col-span-12 md:col-span-6 flex flex-col justify-between" delay={0}>
               <div className="relative h-56 sm:h-64 w-full overflow-hidden bg-black/5">
                 <img
                   src="/IMG-20260815-WA0002.jpg"
@@ -428,6 +356,78 @@ export default function Page() {
 
                 <div className="mt-8 pt-6 border-t border-black/[0.07] flex items-center justify-between">
                   <span className="text-xs font-medium text-black/50">2 Beds Capacity</span>
+                  <a
+                    href={site.whatsappLinkWithMessage}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 text-xs font-semibold text-emerald-700 hover:text-emerald-800 bg-emerald-50 px-3.5 py-1.5 rounded-lg border border-emerald-600/20"
+                  >
+                    Inquire Rates on WhatsApp <ArrowRight className="w-3.5 h-3.5" />
+                  </a>
+                </div>
+              </div>
+            </BentoCard>
+
+            {/* Three Seater Room Bento */}
+            <BentoCard className="col-span-12 md:col-span-6 flex flex-col justify-between" delay={100}>
+              <div className="relative h-56 sm:h-64 w-full overflow-hidden bg-black/5">
+                <img
+                  src="/IMG-20260806-WA0089.jpg"
+                  alt="Three Seater Room at The Second Home Boys Hostel Lahore"
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+                <div className="absolute top-4 left-4 flex gap-2">
+                  <span className="px-3 py-1 rounded-full text-xs font-semibold bg-white/90 backdrop-blur-md text-black shadow-sm">
+                    Three Seater Room
+                  </span>
+                  <span className="px-3 py-1 rounded-full text-xs font-semibold bg-amber-500 text-white shadow-sm">
+                    Common Bathroom
+                  </span>
+                </div>
+                <div className="absolute bottom-4 right-4 px-3 py-1 rounded-full text-xs font-semibold bg-black/80 backdrop-blur-md text-white">
+                  Starting from Affordable Rates
+                </div>
+              </div>
+
+              <div className="p-6 sm:p-8 flex-1 flex flex-col justify-between">
+                <div>
+                  <h3 className="text-2xl font-light mb-3 text-[#111]">Three Seater Room</h3>
+                  <p className="text-sm text-black/65 leading-relaxed mb-6">
+                    A spacious shared room designed specifically for focus and comfort, making it ideal for university students who appreciate good company without giving up their personal study space. Enjoy a well-ventilated, fully furnished room with access to a clean common bathroom and all essential hostel amenities.
+                  </p>
+                  <div className="text-xs font-semibold text-black/45 uppercase tracking-wider mb-3">
+                    Included Room Facilities:
+                  </div>
+                  <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs text-black/80">
+                    <li className="flex items-center gap-2">
+                      <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
+                      Common Bathroom
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
+                      Well Furnished Interiors
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
+                      Comfortable Beds &amp; Mattresses
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
+                      Dedicated Study Space
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
+                      High-Speed Wi-Fi
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
+                      Storage Wardrobes
+                    </li>
+                  </ul>
+                </div>
+
+                <div className="mt-8 pt-6 border-t border-black/[0.07] flex items-center justify-between">
+                  <span className="text-xs font-medium text-black/50">3 Beds Capacity</span>
                   <a
                     href={site.whatsappLinkWithMessage}
                     target="_blank"
@@ -501,7 +501,7 @@ export default function Page() {
               className="inline-flex items-center gap-2 px-6 py-3.5 rounded-2xl bg-black text-white text-xs sm:text-sm font-semibold hover:bg-black/80 transition-all shadow-md shrink-0 w-fit"
             >
               <Camera className="w-4 h-4 text-amber-400" />
-              Open Full Gallery (8 Photos)
+              Open Full Gallery ({galleryItems.length} Photos)
               <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
@@ -582,22 +582,24 @@ export default function Page() {
             })}
           </div>
 
-          <div className="mt-14 p-8 rounded-2xl bg-white border border-black/[0.08] flex flex-col md:flex-row items-center justify-between gap-6 shadow-sm">
+          <div className="mt-14 p-8 rounded-2xl bg-[#111111] border border-black/[0.08] flex flex-col md:flex-row items-center justify-between gap-6 shadow-sm text-white">
             <div className="flex items-center gap-4">
-              <div className="w-12 h-12 rounded-2xl bg-amber-500/10 text-amber-700 flex items-center justify-center shrink-0">
+              <div className="w-12 h-12 rounded-2xl bg-amber-500/20 text-amber-400 flex items-center justify-center shrink-0">
                 <MapPin className="w-6 h-6" />
               </div>
               <div>
-                <h4 className="text-base font-bold text-[#111]">Visit Us in Gunj Baksh Town, Lahore</h4>
-                <p className="text-xs sm:text-sm text-black/60 mt-0.5">
+                <h4 className="text-base font-bold text-white">Visit Us in Gunj Baksh Town, Lahore</h4>
+                <p className="text-xs sm:text-sm text-zinc-300 mt-0.5 leading-relaxed">
                   40-Rattigan Road, Gunj Baksh Town, Lahore — Walking distance from UVAS, GCU &amp; UOE.
+                  <br />
+                  <span className="font-bold text-white">The Second Home Boys Hostel</span>
                 </p>
               </div>
             </div>
             <div className="flex items-center gap-3 w-full md:w-auto">
               <a
                 href={`tel:${site.phoneRaw}`}
-                className="flex-1 md:flex-none text-center px-5 py-3 rounded-xl border border-black/15 bg-[#fafaf8] text-xs font-semibold text-black hover:bg-black/[0.03] transition-all"
+                className="flex-1 md:flex-none text-center px-5 py-3 rounded-xl border border-white/10 bg-white/10 text-xs font-semibold text-white hover:bg-white/20 transition-all"
               >
                 Call {site.phoneDisplay}
               </a>

@@ -16,21 +16,21 @@ const STEPS = [
       subheading: "Designed for academic focus, privacy, and community.",
       highlights: [
         {
-          title: "Three Seater Room (Starting from Affordable Rates)",
-          points: [
-            "Clean Common Bathroom access",
-            "Fully furnished with comfortable beds & mattresses",
-            "Dedicated study desks & personal storage",
-            "High-Speed Wi-Fi & good natural ventilation",
-          ],
-        },
-        {
           title: "Two Seater Room (Starting from Affordable Rates)",
           points: [
             "Private Attached Bathroom",
             "Quiet and peaceful study atmosphere",
             "Spacious personal wardrobes & comfortable bedding",
             "High-Speed Wi-Fi & 24/7 Security",
+          ],
+        },
+        {
+          title: "Three Seater Room (Starting from Affordable Rates)",
+          points: [
+            "Clean Common Bathroom access",
+            "Fully furnished with comfortable beds & mattresses",
+            "Dedicated study desks & personal storage",
+            "High-Speed Wi-Fi & good natural ventilation",
           ],
         },
       ],

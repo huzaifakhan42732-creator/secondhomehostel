@@ -5,8 +5,8 @@ import { MessageSquare } from "lucide-react"
 
 // Hostel inquiries & resident log data
 const ALL_PRS = [
-  { id: 145, title: "Room Inquiry: Three Seater Availability", agent: "Guest Visitor", status: "review", comments: 2, additions: 1, deletions: 0, branch: "gunj-baksh-town/uvas-lahore", time: "Just now" },
-  { id: 144, title: "Check-in Confirmation: Two Seater Room", agent: "Resident Student", status: "review", comments: 1, additions: 1, deletions: 0, branch: "room-204", time: "1m ago" },
+  { id: 145, title: "Room Inquiry: Two Seater Availability", agent: "Guest Visitor", status: "review", comments: 2, additions: 1, deletions: 0, branch: "gunj-baksh-town/uvas-lahore", time: "Just now" },
+  { id: 144, title: "Check-in Confirmation: Three Seater Room", agent: "Resident Student", status: "review", comments: 1, additions: 1, deletions: 0, branch: "room-204", time: "1m ago" },
   { id: 143, title: "Refundable Security Deposit Verified", agent: "Hostel Admin", status: "merged", comments: 4, additions: 1, deletions: 0, branch: "deposit-confirmed", time: "1m ago" },
   { id: 142, title: "Wi-Fi & Study Room Maintenance Check", agent: "Maintenance Team", status: "merged", comments: 3, additions: 12, deletions: 1, branch: "facility/wifi", time: "2m ago" },
   { id: 141, title: "WhatsApp Booking Request: UVAS Lahore Student", agent: "WhatsApp Direct", status: "approved", comments: 1, additions: 1, deletions: 0, branch: "wa.me/923032518181", time: "8m ago" },
@@ -15,8 +15,8 @@ const ALL_PRS = [
 ]
 
 const ALL_REVIEW_FILES = [
-  { file: "Three Seater Room (Common Bath)", pct: 100 },
   { file: "Two Seater Room (Attached Bath)", pct: 100 },
+  { file: "Three Seater Room (Common Bath)", pct: 100 },
   { file: "Refundable Security Deposit", pct: 100 },
   { file: "High-Speed Wi-Fi Facilities", pct: 100 },
   { file: "Gunj Baksh Town, Lahore Location", pct: 100 },
